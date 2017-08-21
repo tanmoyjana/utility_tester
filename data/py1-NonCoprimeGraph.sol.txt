@@ -1,0 +1,409 @@
+Problem Statistics for 2016 TCO Algorithm > Algo Semifinal 1 > Room 1 > scott_wu
+
+	Class Name	Method Name	 	Difficulty	Status	Score	
+
+	[ NonCoprimeGraph ]	distance	problem details	Level One	Passed System Test	240.33	
+	MinimumCutsAgain	construct	problem details	Level Two	Passed System Test	282.36	
+	ColorfulPath	shortestPath	problem details	Level Three	Opened	0.00	
+
+
+
+View NonCoprimeGraph   Problem Statement
+#include <vector>
+#include <list>
+#include <map>
+#include <set>
+#include <deque>
+#include <stack>
+#include <bitset>
+#include <algorithm>
+#include <functional>
+#include <numeric>
+#include <utility>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+#include <cstdio>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+ 
+using namespace std;
+ 
+class NonCoprimeGraph {
+public:
+  int distance(int, int, int);
+};
+ 
+int gcf (int x, int y)
+{
+  if (y == 0) return x;
+  return gcf (y, x % y);
+}
+ 
+int NonCoprimeGraph::distance(int n, int s, int t) {
+  if (s == t) return 0;
+  
+  if (gcf (s, t) > 1) return 1;
+  
+  if (s == 1 || t == 1) return -1;
+  
+  int sfac = -1;
+  for (int i = 2; i * i <= s; i++)
+  {
+    if (s % i == 0)
+    {
+      sfac = i;
+      break;
+    }
+  }
+  if (sfac == -1) sfac = s;
+  
+  int tfac = -1;
+  for (int i = 2; i * i <= t; i++)
+  {
+    if (t % i == 0)
+    {
+      tfac = i;
+      break;
+    }
+  }
+  if (tfac == -1) tfac = t;
+  
+  if (sfac * (long long) tfac <= n)
+    return 2;
+  if (sfac * 2 <= n && tfac * 2 <= n)
+    return 3;
+  return -1;
+}
+ 
+ 
+//Powered by [KawigiEdit] 2.0!
+
+
+ System Test Results
+
+	Test Arguments		Expected Results		Success	
+
+	10, 6, 9		1		Passed	
+
+
+	100, 89, 97		-1		Passed	
+
+
+	100, 97, 97		0		Passed	
+
+
+	1, 1, 1		0		Passed	
+
+
+	100, 1, 2		-1		Passed	
+
+
+	10, 8, 9		2		Passed	
+
+
+	7, 1, 3		-1		Passed	
+
+
+	3, 1, 2		-1		Passed	
+
+
+	2, 1, 2		-1		Passed	
+
+
+	9, 8, 1		-1		Passed	
+
+
+	10, 6, 10		1		Passed	
+
+
+	4, 2, 4		1		Passed	
+
+
+	8, 6, 4		1		Passed	
+
+
+	5, 2, 4		1		Passed	
+
+
+	6, 2, 3		2		Passed	
+
+
+	6, 4, 3		2		Passed	
+
+
+	7, 3, 2		2		Passed	
+
+
+	10, 2, 3		2		Passed	
+
+
+	10, 9, 5		3		Passed	
+
+
+	10, 5, 3		3		Passed	
+
+
+	10, 3, 5		3		Passed	
+
+
+	10, 5, 3		3		Passed	
+
+
+	24, 6, 19		-1		Passed	
+
+
+	64, 25, 41		-1		Passed	
+
+
+	49, 26, 47		-1		Passed	
+
+
+	3, 1, 2		-1		Passed	
+
+
+	72, 18, 64		1		Passed	
+
+
+	40, 15, 35		1		Passed	
+
+
+	32, 6, 2		1		Passed	
+
+
+	68, 55, 50		1		Passed	
+
+
+	10, 3, 4		2		Passed	
+
+
+	56, 33, 50		2		Passed	
+
+
+	86, 50, 57		2		Passed	
+
+
+	46, 7, 8		2		Passed	
+
+
+	67, 31, 63		3		Passed	
+
+
+	49, 13, 19		3		Passed	
+
+
+	94, 47, 43		3		Passed	
+
+
+	48, 39, 17		3		Passed	
+
+
+	574, 153, 349		-1		Passed	
+
+
+	548, 190, 509		-1		Passed	
+
+
+	410, 112, 379		-1		Passed	
+
+
+	108, 30, 107		-1		Passed	
+
+
+	939, 170, 874		1		Passed	
+
+
+	47, 21, 7		1		Passed	
+
+
+	779, 526, 442		1		Passed	
+
+
+	102, 65, 26		1		Passed	
+
+
+	952, 400, 707		2		Passed	
+
+
+	913, 636, 211		2		Passed	
+
+
+	377, 172, 139		2		Passed	
+
+
+	46, 27, 7		2		Passed	
+
+
+	580, 179, 209		3		Passed	
+
+
+	366, 265, 113		3		Passed	
+
+
+	502, 193, 321		3		Passed	
+
+
+	466, 323, 113		3		Passed	
+
+
+	85630, 20267, 55837		-1		Passed	
+
+
+	56315, 32327, 33165		-1		Passed	
+
+
+	59446, 43481, 20010		-1		Passed	
+
+
+	31425, 29999, 20389		-1		Passed	
+
+
+	77027, 30201, 17142		1		Passed	
+
+
+	61186, 34916, 22924		1		Passed	
+
+
+	60655, 41002, 25220		1		Passed	
+
+
+	85768, 10448, 48770		1		Passed	
+
+
+	27062, 26427, 24902		2		Passed	
+
+
+	78369, 23515, 47243		2		Passed	
+
+
+	94658, 89248, 73723		2		Passed	
+
+
+	13285, 7840, 13269		2		Passed	
+
+
+	23496, 20045, 9337		3		Passed	
+
+
+	41361, 17173, 20123		3		Passed	
+
+
+	87536, 30241, 38947		3		Passed	
+
+
+	50099, 6689, 10867		3		Passed	
+
+
+	319923, 219799, 203433		-1		Passed	
+
+
+	9574290, 4842407, 2870035		-1		Passed	
+
+
+	2011593, 1984907, 100143		-1		Passed	
+
+
+	8395167, 6928643, 6189449		-1		Passed	
+
+
+	9545823, 1965526, 3022234		1		Passed	
+
+
+	4329013, 3362694, 3899366		1		Passed	
+
+
+	1324826, 841570, 428298		1		Passed	
+
+
+	1821074, 624082, 1388552		1		Passed	
+
+
+	3372058, 1648345, 715796		2		Passed	
+
+
+	7174058, 1604089, 5411459		2		Passed	
+
+
+	9050878, 4172351, 2392609		2		Passed	
+
+
+	3267590, 2125790, 348733		2		Passed	
+
+
+	136724, 56033, 44087		3		Passed	
+
+
+	7530390, 1271051, 681139		3		Passed	
+
+
+	3695347, 1772333, 3012397		3		Passed	
+
+
+	1364842, 497993, 259129		3		Passed	
+
+
+	848021038, 458015743, 728566018		-1		Passed	
+
+
+	18173091, 9434119, 15473471		-1		Passed	
+
+
+	969839413, 484890565, 637940053		-1		Passed	
+
+
+	83397393, 36531893, 58352923		-1		Passed	
+
+
+	244165344, 234535224, 128366686		1		Passed	
+
+
+	622713217, 80062570, 484686390		1		Passed	
+
+
+	654634235, 47338950, 339795762		1		Passed	
+
+
+	23400413, 15290948, 19343606		1		Passed	
+
+
+	335230263, 104150917, 201985671		2		Passed	
+
+
+	462677423, 27761159, 310749010		2		Passed	
+
+
+	649390661, 234717367, 619456887		2		Passed	
+
+
+	428074160, 417317218, 367217047		2		Passed	
+
+
+	231768563, 108490409, 38626329		3		Passed	
+
+
+	308142430, 46625791, 62750269		3		Passed	
+
+
+	519362889, 180810221, 308900717		3		Passed	
+
+
+	636914887, 217452689, 272118507		3		Passed	
+
+
+	1000000000, 1, 1		0		Passed	
+
+
+	1000000000, 99999997, 99999997		0		Passed	
+
+
+	1000000000, 998812807, 997170059		2		Passed	
+
+
+	1000000000, 159999929, 209999893		3		Passed	
+
+
+
+
+
+
