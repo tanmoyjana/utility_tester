@@ -22,7 +22,7 @@ class ATaleOfThreeCities:
                 d2.append(math.pow((k - l), 2))
 
         distance1 = distance1 + math.sqrt(min(d1) + min(d2))
-        print "Minimum Distance between A and B =", distance1
+    
 
         for m in list(bx):
             for n in list(cx):
@@ -33,7 +33,7 @@ class ATaleOfThreeCities:
                 d4.append(math.pow((p-q), 2))
 
         distance2 = distance2 + math.sqrt(min(d3) + min(d4))
-        print "Minimum Distance between B and C =", distance2
+        
 
         for a in list(ax):
             for b in list(cx):
@@ -44,12 +44,12 @@ class ATaleOfThreeCities:
                 d6.append(math.pow((c-d), 2))
 
         distance3 = distance3 + math.sqrt(min(d5) + min(d6))
-        print "Minimum Distance between A and C =",distance3
 
         a = distance1 + distance2
         b = distance1 + distance3
         c = distance2 + distance3
-        print  "Minimal added distance of the two tunnels =",min(a,b,c)
+
+        return min(a,b,c)
         
 
 

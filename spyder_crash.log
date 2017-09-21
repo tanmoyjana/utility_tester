@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/spyder/app/mainwindow.py", line 3011, in main
+    mainwindow = run_spyder(app, options, args)
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/spyder/app/mainwindow.py", line 2913, in run_spyder
+    main.setup()
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/spyder/app/mainwindow.py", line 873, in setup
+    from spyder.plugins.ipythonconsole import IPythonConsole
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/spyder/plugins/ipythonconsole.py", line 60, in <module>
+    from spyder.widgets.ipythonconsole import ClientWidget
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/spyder/widgets/ipythonconsole/__init__.py", line 12, in <module>
+    from .debugging import DebuggingWidget
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/spyder/widgets/ipythonconsole/debugging.py", line 16, in <module>
+    from qtconsole.rich_jupyter_widget import RichJupyterWidget
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/qtconsole/rich_jupyter_widget.py", line 14, in <module>
+    from .jupyter_widget import JupyterWidget
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/qtconsole/jupyter_widget.py", line 19, in <module>
+    from IPython.lib.lexers import IPythonLexer, IPython3Lexer
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/IPython/__init__.py", line 48, in <module>
+    from .core.application import Application
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/IPython/core/application.py", line 25, in <module>
+    from IPython.core import release, crashhandler
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/IPython/core/crashhandler.py", line 28, in <module>
+    from IPython.core import ultratb
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/IPython/core/ultratb.py", line 128, in <module>
+    from IPython.utils.terminal import get_terminal_size
+  File "/root/anaconda2/envs/gl-env/lib/python2.7/site-packages/IPython/utils/terminal.py", line 22, in <module>
+    from backports.shutil_get_terminal_size import get_terminal_size as _get_terminal_size
+ImportError: No module named shutil_get_terminal_size
