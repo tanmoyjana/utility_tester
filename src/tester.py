@@ -19,9 +19,12 @@ def tester(signature, file_name):
             output.write(str(load(path)))
             output.close
             ls = open(PATH, 'r').read()
-        LS = eval(ls)
     except KeyError:
         return 'There is no such signature %r' % sig
+    try:
+        LS = eval(ls.strip())
+    except SyntaxError:
+        LS = load(path)
     result = []
     fail = []
     error = []
@@ -43,13 +46,12 @@ def tester(signature, file_name):
             else:
                 result.append('failed')
                 fail.append(value[0])
-        except:
+        except SyntaxError:
             result.append('Error')
-            
     d = {'total' : len(LS), 'pass' : result.count('passed'), 
          'fail' : result.count('failed'), 'error' : result.count('Error')}
     path = os.path.join('result_output', py_file[py_file.find("submission")+ 
-    len('submission')+ 1 : py_file.rfind('.py')+ len('.py')]+ '.test.output.dat')
+len('submission')+ 1 : py_file.rfind('.py')+ len('.py')]+ '.test.output.dat')
     output = open(path, 'w')
     output.write(str(d))
     return d

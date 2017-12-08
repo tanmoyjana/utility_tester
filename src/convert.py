@@ -1,4 +1,4 @@
-"""it coverts the text file into systematic text file"""
+"""it coverts the text file into a list"""
 import re
 def load(txt_file):
     final_list = []
