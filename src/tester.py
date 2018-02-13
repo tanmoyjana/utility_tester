@@ -50,10 +50,10 @@ def tester(signature, file_name):
             result.append('Error')
     d = {'total' : len(LS), 'pass' : result.count('passed'), 
          'fail' : result.count('failed'), 'error' : result.count('Error')}
-    path = os.path.join('result_output', py_file[py_file.find("submission")+ 
-len('submission')+ 1 : py_file.rfind('.py')+ len('.py')]+ '.test.output.dat')
-    output = open(path, 'w')
-    output.write(str(d))
+    #path = os.path.join('result_output', py_file[py_file.find("submission")+ 
+#len('submission')+ 1 : py_file.rfind('.py')+ len('.py')]+ '.test.output.dat')
+    #output = open(path, 'w')
+    #output.write(str(d))
     return d
 
      
